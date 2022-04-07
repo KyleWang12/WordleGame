@@ -1,0 +1,14 @@
+.welcome{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height: 60vh;
+}
+.button{
+    width: 230px;
+    height: 8vh;
+}
+.title{
+    font-weight: bolder;
+}

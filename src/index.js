@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import reducers from './reducers/reducers'
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './App.css'
+import Welcome from './components/Welcome';
+import About from './components/About'
+
+const store = createStore(reducers)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <Provider store={store}>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Welcome />} />
+                <Route path="/game" element={<Navigate to="/game/easy" />} />
+                <Route path="/game/:difficulty" element={
+                    <App />
+                } />
+                <Route path="/about" element={<About />} />
+            </Routes>
+        </BrowserRouter>
+    </Provider>
+    ,
+    document.getElementById('root'));
