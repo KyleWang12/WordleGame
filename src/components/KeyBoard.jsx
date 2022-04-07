@@ -55,7 +55,7 @@ function KeyBoard() {
             } else if (word.length === wordLength) {
                 // alert("not a valid word!!!");
                 setOpen(true);
-                setErrMes('Not a valid word!');
+                setErrMes('Not a valid english word!');
             } else {
                 // alert("word not long enough!!");
                 setOpen(true);
