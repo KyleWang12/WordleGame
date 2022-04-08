@@ -11,7 +11,7 @@ import './keyboard.css'
 function KeyBoard() {
     const rows = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
     ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-    ["Enter", "X", "C", "V", "B", "N", "M", "⌫"]]
+    ["Enter", "Z", "X", "C", "V", "B", "N", "M", "⌫"]]
 
     const [show, setShow] = useState(false);
     const [failedShow, setFailedShow] = useState(false);
@@ -86,8 +86,8 @@ function KeyBoard() {
                 </Row>
             )}
             <EndGamePopUp show={show} handleClose={SuccessHandleClose} type={'success'} title={'Congratulations!'} message={'Would you like to try again?'} />
-            <EndGamePopUp show={failedShow} handleClose={FailedHandleClose} type={'warning'} title={'You lost...'} message={'Would you like to try again?'} />
-            <ErrorPopUp open={open} handleClose={ErrorHandleClose} message={errMes} />
+            <EndGamePopUp show={failedShow} handleClose={FailedHandleClose} type={'warning'} title={'You lost...'} message={'Would you like to try again?'} answer={goal}/>
+            <ErrorPopUp open={open} handleClose={ErrorHandleClose} message={errMes}/>
         </Container>
     )
 }
