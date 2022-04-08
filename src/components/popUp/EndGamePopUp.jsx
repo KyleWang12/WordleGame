@@ -1,4 +1,5 @@
 import {Button,Modal} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -22,7 +23,10 @@ export default function EndGamePopUp(props) {
                     {props.message}
                 </Modal.Body>
                 <Modal.Footer className="justify-content-center">
-                    <Button variant="primary" onClick={props.handleClose}>Try Again</Button>
+                    <Button variant="primary w-25" onClick={props.handleClose}>Try Again</Button>
+                    <Link to="/" className='w-25'>
+                        <Button className="btn-secondary w-100" >Cancel</Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
     );
