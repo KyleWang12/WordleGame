@@ -4,7 +4,7 @@ import KeyCap from './KeyCap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { isWord } from '../helper/getWord'
-import PopUp from './PopUp';
+import EndGamePopUp from './EndGamePopUp';
 import ErrorPopUp from './ErrorPopUp';
 import './keyboard.css'
 
@@ -14,12 +14,18 @@ function KeyBoard() {
     ["Enter", "X", "C", "V", "B", "N", "M", "⌫"]]
 
     const [show, setShow] = useState(false);
+    const [failedShow, setFailedShow] = useState(false);
     const [open, setOpen] = useState(false);
     const [errMes, setErrMes] = useState("");
 
     function SuccessHandleClose() {
         dispatch({ type: 'RESET' });
         setShow(false);
+    }
+
+    function FailedHandleClose() {
+        dispatch({ type: 'RESET' });
+        setFailedShow(false);
     }
 
     function ErrorHandleClose() {
@@ -51,6 +57,10 @@ function KeyBoard() {
                 if (word === goal) {
                     setTimeout(() => setShow(true), 500)
                 }
+                if(currentRow===allowedTries && word !== goal){
+                    setTimeout(() => setFailedShow(true), 500)
+                    // dispatch({type:'FAILED_SHOW'});
+                }
                 setWord("");
             } else if (word.length === wordLength) {
                 // alert("not a valid word!!!");
@@ -75,7 +85,8 @@ function KeyBoard() {
                     )}
                 </Row>
             )}
-            <PopUp show={show} handleClose={SuccessHandleClose} />
+            <EndGamePopUp show={show} handleClose={SuccessHandleClose} type={'success'} title={'Congratulations!'} message={'Would you like to try again?'} />
+            <EndGamePopUp show={failedShow} handleClose={FailedHandleClose} type={'warning'} title={'You lost...'} message={'Would you like to try again?'} />
             <ErrorPopUp open={open} handleClose={ErrorHandleClose} message={errMes} />
         </Container>
     )

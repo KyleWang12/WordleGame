@@ -10,7 +10,7 @@ import { Button } from "@mui/material";
 export default function Welcome() {
 
     return (
-        <Container className="text-center" >
+        <Container className="text-center d-flex flex-column justify-content-around height-100" >
             <br></br>
             <br></br>
             <h1><Badge bg="info">Rules</Badge></h1>

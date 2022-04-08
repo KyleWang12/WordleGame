@@ -3,6 +3,8 @@ import { Snackbar, Alert } from '@mui/material';
 
 export default function ErrorPopUp(props) {
 
+    
+
     return (
         <Snackbar open={props.open}
             autoHideDuration={2000}
