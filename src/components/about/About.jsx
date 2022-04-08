@@ -2,9 +2,8 @@
 import { Container, Badge, Row, Col, Card } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
-import Cell from "./Cell";
+import Cell from "../gameBoard/Cell";
 import './about.css'
-import './row.css'
 import { Button } from "@mui/material";
 
 export default function Welcome() {

@@ -6,7 +6,7 @@ function KeyCap(props) {
 
     return (
         <Col className='p-0 keyCap-fixed'>
-            <Button style={{minWidth: '100%'}} className='bg-light' onClick={props.onClick}>
+            <Button className='bg-light keyCap-button' onClick={props.onClick}>
                 {props.letter}
             </Button>
         </Col>

@@ -1,0 +1,9 @@
+.keyCap-fixed {
+    /* min-width: 20px; */
+    height: 60px;
+    margin-right: 1%;
+}
+.keyCap-button {
+    min-width: 100% !important;
+    height: 55px;
+}

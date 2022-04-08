@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Cell from './Cell'
 import { Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './row.css'
+import './oneRow.css'
 
 export default function OneRow(props) {
 
@@ -14,14 +14,14 @@ export default function OneRow(props) {
     const nums = Array.from(Array(wordLength).keys());
 
     const cells = nums.map(num =>
-        <Col className="col-2 p-2px" key={num.toString()} >
+        <Col className="p-2px max-width-60" key={num.toString()} >
             <Cell letter={letters[num].letter} bg={letters[num].bg} />
         </Col>
     )
 
 
     return (
-        <Row className='flex-nowrap justify-content-center'>
+        <Row className='flex-nowrap justify-content-center max-width'>
             {cells}
         </Row>
     )

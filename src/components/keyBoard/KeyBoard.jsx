@@ -3,10 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import KeyCap from './KeyCap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { isWord } from '../helper/getWord'
-import EndGamePopUp from './EndGamePopUp';
-import ErrorPopUp from './ErrorPopUp';
-import './keyboard.css'
+import { isWord } from '../../helper/getWord'
+import EndGamePopUp from '../popUp/EndGamePopUp';
+import ErrorPopUp from '../popUp/ErrorPopUp';
+import './keyBoard.css'
 
 function KeyBoard() {
     const rows = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
@@ -79,7 +79,7 @@ function KeyBoard() {
     return (
         <Container className='keyboard h-100'>
             {[0, 1, 2].map(id =>
-                <Row key={id.toString()} className='flex-nowrap justify-content-between'>
+                <Row key={id.toString()} className='flex-nowrap justify-content-center '>
                     {rows[id].map(letter =>
                         <KeyCap key={letter} onClick={handleClick} letter={letter} />
                     )}

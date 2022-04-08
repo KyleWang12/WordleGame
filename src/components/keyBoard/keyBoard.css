@@ -1,3 +1,6 @@
 .keyboard{
     max-width: 500px;
 }
+.row-h {
+    height: 80px;
+}

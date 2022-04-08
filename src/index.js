@@ -6,8 +6,8 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import reducers from './reducers/reducers'
 import App from './App';
 import './App.css'
-import Welcome from './components/Welcome';
-import About from './components/About'
+import Welcome from './components/welcome/Welcome';
+import About from './components/about/About'
 
 const store = createStore(reducers)
 

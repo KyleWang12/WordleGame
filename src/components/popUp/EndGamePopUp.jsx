@@ -1,6 +1,5 @@
 import {Button,Modal} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 
 export default function EndGamePopUp(props) {

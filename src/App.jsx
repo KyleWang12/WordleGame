@@ -1,5 +1,5 @@
-import GameBoard from "./components/GameBoard"
-import KeyBoard from "./components/KeyBoard"
+import GameBoard from "./components/gameBoard/GameBoard"
+import KeyBoard from "./components/keyBoard/KeyBoard"
 import { Container } from "react-bootstrap"
 import { useParams } from "react-router-dom";
 import './App.css'
